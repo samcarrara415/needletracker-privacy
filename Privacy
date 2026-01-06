@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NeedleTracker Privacy Policy</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            color: #333;
+        }
+        h1 { color: #2c3e50; }
+        h2 { color: #34495e; margin-top: 30px; }
+        .last-updated { color: #7f8c8d; font-style: italic; }
+    </style>
+</head>
+<body>
+    <h1>Privacy Policy for NeedleTracker</h1>
+    <p class="last-updated">Last Updated: January 5, 2026</p>
+
+    <h2>Introduction</h2>
+    <p>
+        NeedleTracker ("we," "our," or "us") is committed to protecting your privacy.
+        This Privacy Policy explains how our mobile application handles your information.
+    </p>
+
+    <h2>Information We Don't Collect</h2>
+    <p>
+        NeedleTracker does not collect, store, or transmit any personal information to our servers.
+        We do not track you, we do not use analytics, and we do not share your data with third parties.
+    </p>
+
+    <h2>Data Storage</h2>
+    <p>
+        All data you create in NeedleTracker (including projects, threads, photos, and notes) is stored:
+    </p>
+    <ul>
+        <li><strong>Locally on your device</strong> - Your data stays on your iPhone or iPad</li>
+        <li><strong>In your personal iCloud account</strong> (if you enable iCloud sync) - Your data syncs between your devices using Apple's iCloud service</li>
+    </ul>
+    <p>
+        We do not have access to your iCloud data. Apple's privacy policy governs how iCloud handles your data.
+    </p>
+
+    <h2>Photos</h2>
+    <p>
+        When you choose to add photos to your projects, these photos are:
+    </p>
+    <ul>
+        <li>Stored only on your device and in your personal iCloud account</li>
+        <li>Never uploaded to our servers</li>
+        <li>Never shared with third parties</li>
+        <li>Only accessible to you through the app</li>
+    </ul>
+
+    <h2>iCloud Sync</h2>
+    <p>
+        If you enable iCloud sync, your project data synchronizes across your devices using your personal iCloud account.
+        This sync is handled entirely by Apple's iCloud service. We do not have access to your iCloud data.
+    </p>
+
+    <h2>Third-Party Services</h2>
+    <p>
+        NeedleTracker does not integrate with any third-party analytics, advertising, or tracking services.
+    </p>
+
+    <h2>Children's Privacy</h2>
+    <p>
+        Our app does not collect any personal information from anyone, including children under 13.
+    </p>
+
+    <h2>Data Security</h2>
+    <p>
+        Since all your data is stored locally on your device or in your personal iCloud account,
+        the security of your data is managed by iOS and iCloud security features.
+    </p>
+
+    <h2>Your Rights</h2>
+    <p>
+        Since we don't collect your data, you have complete control over your information:
+    </p>
+    <ul>
+        <li>Delete the app to remove all local data</li>
+        <li>Manage your iCloud data through iOS Settings</li>
+        <li>No need to request data deletion from us (we don't have it)</li>
+    </ul>
+
+    <h2>Changes to This Policy</h2>
+    <p>
+        We may update this Privacy Policy from time to time. We will notify you of any changes by
+        updating the "Last Updated" date at the top of this policy.
+    </p>
+
+    <h2>Contact Us</h2>
+    <p>
+        If you have any questions about this Privacy Policy, please contact us at:
+    </p>
+    <p>
+        Email: <a href="mailto:samcarrara415@gmail.com">samcarrara415@gmail.com</a>
+    </p>
+
+    <hr style="margin-top: 50px; border: none; border-top: 1px solid #ddd;">
+    <p style="text-align: center; color: #7f8c8d; font-size: 14px;">
+        © 2026 NeedleTracker. All rights reserved.
+    </p>
+</body>
+</html>
