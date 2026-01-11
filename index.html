@@ -2,36 +2,440 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="refresh" content="0; url=PRIVACY_POLICY.html">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NeedleTracker - Redirecting...</title>
+    <title>NeedleTracker - Track Your Needlepoint Projects</title>
+    <meta name="description" content="The beautiful iOS app for tracking your needlepoint and cross-stitch projects. Organize projects, track threads, and never lose your progress.">
+    <meta name="keywords" content="needlepoint, cross-stitch, embroidery, thread tracking, craft app, iOS app">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="NeedleTracker - Track Your Needlepoint Projects">
+    <meta property="og:description" content="The beautiful iOS app for tracking your needlepoint and cross-stitch projects.">
+    <meta property="og:type" content="website">
+
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-            background-color: #f5f5f7;
+            line-height: 1.6;
+            color: #1d1d1f;
+            background: #ffffff;
         }
-        .container {
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            z-index: 1000;
+            padding: 16px 0;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        }
+
+        nav .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #6B4E71;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .logo-icon {
+            font-size: 1.8rem;
+        }
+
+        nav a {
+            color: #1d1d1f;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        nav a:hover {
+            color: #6B4E71;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 140px 24px 80px;
+            text-align: center;
+            background: linear-gradient(180deg, #f5f5f7 0%, #ffffff 100%);
+        }
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 8vw, 4rem);
+            font-weight: 700;
+            color: #1d1d1f;
+            margin-bottom: 16px;
+            letter-spacing: -0.02em;
+        }
+
+        .hero h1 span {
+            color: #6B4E71;
+        }
+
+        .hero .tagline {
+            font-size: clamp(1.1rem, 3vw, 1.4rem);
+            color: #86868b;
+            max-width: 600px;
+            margin: 0 auto 40px;
+        }
+
+        .app-store-badge {
+            display: inline-block;
+            transition: transform 0.2s;
+        }
+
+        .app-store-badge:hover {
+            transform: scale(1.05);
+        }
+
+        .app-store-badge img {
+            height: 54px;
+        }
+
+        .hero-image {
+            max-width: 300px;
+            margin: 50px auto 0;
+            filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.15));
+        }
+
+        .hero-image img {
+            width: 100%;
+            border-radius: 30px;
+        }
+
+        /* Features Section */
+        .features {
+            padding: 100px 24px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .features h2 {
+            text-align: center;
+            font-size: clamp(2rem, 5vw, 2.8rem);
+            margin-bottom: 60px;
+            color: #1d1d1f;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 40px;
+        }
+
+        .feature-card {
+            text-align: center;
+            padding: 40px 30px;
+            border-radius: 20px;
+            background: #f5f5f7;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        .feature-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 12px;
+            color: #1d1d1f;
+        }
+
+        .feature-card p {
+            color: #86868b;
+            font-size: 1rem;
+        }
+
+        /* Thread Colors Section */
+        .thread-section {
+            padding: 100px 24px;
+            background: linear-gradient(180deg, #ffffff 0%, #f5f5f7 100%);
+        }
+
+        .thread-section .container {
+            max-width: 1000px;
+            margin: 0 auto;
             text-align: center;
         }
-        h1 {
-            color: #2c3e50;
+
+        .thread-section h2 {
+            font-size: clamp(2rem, 5vw, 2.8rem);
+            margin-bottom: 20px;
+            color: #1d1d1f;
         }
-        a {
-            color: #007aff;
+
+        .thread-section .subtitle {
+            font-size: 1.2rem;
+            color: #86868b;
+            margin-bottom: 50px;
+        }
+
+        .color-swatches {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-bottom: 40px;
+        }
+
+        .swatch {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+            transition: transform 0.2s;
+        }
+
+        .swatch:hover {
+            transform: scale(1.2);
+        }
+
+        .brand-list {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .brand {
+            background: white;
+            padding: 15px 30px;
+            border-radius: 50px;
+            font-weight: 600;
+            color: #6B4E71;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+        }
+
+        /* Stats Section */
+        .stats {
+            padding: 80px 24px;
+            background: #6B4E71;
+            color: white;
+        }
+
+        .stats .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            text-align: center;
+        }
+
+        .stat h3 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .stat p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        /* CTA Section */
+        .cta {
+            padding: 100px 24px;
+            text-align: center;
+            background: #f5f5f7;
+        }
+
+        .cta h2 {
+            font-size: clamp(2rem, 5vw, 2.8rem);
+            margin-bottom: 20px;
+            color: #1d1d1f;
+        }
+
+        .cta p {
+            font-size: 1.2rem;
+            color: #86868b;
+            margin-bottom: 40px;
+        }
+
+        /* Footer */
+        footer {
+            padding: 40px 24px;
+            background: #1d1d1f;
+            color: #86868b;
+            text-align: center;
+        }
+
+        footer .links {
+            margin-bottom: 20px;
+        }
+
+        footer a {
+            color: #86868b;
             text-decoration: none;
+            margin: 0 15px;
+            transition: color 0.2s;
+        }
+
+        footer a:hover {
+            color: white;
+        }
+
+        footer .copyright {
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .feature-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .stats .container {
+                grid-template-columns: 1fr 1fr;
+            }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>NeedleTracker</h1>
-        <p>Redirecting to Privacy Policy...</p>
-        <p>If you are not redirected, <a href="PRIVACY_POLICY.html">click here</a>.</p>
-    </div>
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <a href="#" class="logo">
+                <span class="logo-icon">🧵</span>
+                NeedleTracker
+            </a>
+            <a href="PRIVACY_POLICY.html">Privacy</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>Track Your <span>Needlework</span></h1>
+        <p class="tagline">The beautiful iOS app for organizing your needlepoint and cross-stitch projects. Like Goodreads, but for stitchers.</p>
+
+        <a href="https://apps.apple.com/app/id6757410129" class="app-store-badge">
+            <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on the App Store">
+        </a>
+
+        <div class="hero-image">
+            <img src="Screenshots/01_screenshot.png" alt="NeedleTracker App Screenshot">
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <h2>Everything You Need</h2>
+        <div class="feature-grid">
+            <div class="feature-card">
+                <div class="feature-icon">📸</div>
+                <h3>Project Gallery</h3>
+                <p>Store photos of your works in progress and finished pieces. Never lose track of your beautiful creations.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🎨</div>
+                <h3>Thread Tracking</h3>
+                <p>Log every thread used in each project. Auto-detect colors from codes and keep detailed notes.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">✨</div>
+                <h3>Smart Color Detection</h3>
+                <p>Enter a thread code and instantly see the color preview and official name. Magic!</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">📝</div>
+                <h3>Thread Notes</h3>
+                <p>Add descriptions like "for the sky" or "border stitching" to remember exactly how you used each color.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Thread Colors Section -->
+    <section class="thread-section">
+        <div class="container">
+            <h2>826+ Thread Colors</h2>
+            <p class="subtitle">Pre-loaded with official colors from your favorite brands</p>
+
+            <div class="color-swatches">
+                <div class="swatch" style="background: #FF0000;"></div>
+                <div class="swatch" style="background: #FF6B35;"></div>
+                <div class="swatch" style="background: #FFD700;"></div>
+                <div class="swatch" style="background: #228B22;"></div>
+                <div class="swatch" style="background: #4169E1;"></div>
+                <div class="swatch" style="background: #6B4E71;"></div>
+                <div class="swatch" style="background: #FF69B4;"></div>
+                <div class="swatch" style="background: #8B4513;"></div>
+                <div class="swatch" style="background: #20B2AA;"></div>
+                <div class="swatch" style="background: #9370DB;"></div>
+            </div>
+
+            <div class="brand-list">
+                <span class="brand">DMC</span>
+                <span class="brand">Anchor</span>
+                <span class="brand">Madeira</span>
+                <span class="brand">Kreinik</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats">
+        <div class="container">
+            <div class="stat">
+                <h3>826+</h3>
+                <p>Thread Colors</p>
+            </div>
+            <div class="stat">
+                <h3>4</h3>
+                <p>Thread Brands</p>
+            </div>
+            <div class="stat">
+                <h3>100%</h3>
+                <p>Free to Use</p>
+            </div>
+            <div class="stat">
+                <h3>iOS 15+</h3>
+                <p>Compatible</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta">
+        <h2>Start Tracking Your Projects</h2>
+        <p>Join fellow stitchers who love staying organized.</p>
+        <a href="https://apps.apple.com/app/id6757410129" class="app-store-badge">
+            <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on the App Store">
+        </a>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="links">
+            <a href="PRIVACY_POLICY.html">Privacy Policy</a>
+            <a href="mailto:samcarrara415@gmail.com">Contact</a>
+        </div>
+        <p class="copyright">&copy; 2025 NeedleTracker. Made with love for the needlework community.</p>
+    </footer>
 </body>
 </html>
